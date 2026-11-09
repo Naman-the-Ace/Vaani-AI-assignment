@@ -1,0 +1,2 @@
+request_id,scenario,source,start_time,first_token_ms,total_ms,status,retries,tokens_in,tokens_out,retrieval_setting,answer_grade,run_id,question_id,planned_duration_s,queue_wait_ms,work_ms,retry_ms,provider_first_delta_ms,queue_depth_after_admit,run_peak_queue,rung_served,outcome_kind,refusal_reason,estimated_cost_usd,rate_limit_events,reasoning_tokens,limit_observation_json
+req_test_001,probe,real,2026-11-09T10:00:00Z,200.0,500.0,ok,0,100,50,B,,run_test_001,,,10.0,485.0,5.0,,0,0,0,full_answer,,,0,0,
