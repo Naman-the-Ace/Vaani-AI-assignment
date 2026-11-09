@@ -79,8 +79,8 @@ The corpus consists exclusively of three pinned, versioned research papers. Ever
 | arXiv ID | Title | Pages | Chunk ID Format |
 |---|---|---|---|
 | **1706.03762v7** | *Attention Is All You Need* (Transformer) | 15 | `1706.03762v7:{setting}:pNNN:cNNN` |
-| **2410.00037v1** | *Moshi: a speech-text foundation model* | 20 | `2410.00037v1:{setting}:pNNN:cNNN` |
-| **2507.07955v2** | *Advances in RAG Systems & Dynamic Chunking* | 12 | `2507.07955v2:{setting}:pNNN:cNNN` |
+| **2410.00037v1** | *Moshi: a speech-text foundation model for real-time dialogue* | 66 | `2410.00037v1:{setting}:pNNN:cNNN` |
+| **2507.07955v2** | *Dynamic Chunking for End-to-End Hierarchical Sequence Modeling* (H-Net) | 39 | `2507.07955v2:{setting}:pNNN:cNNN` |
 
 ---
 
@@ -122,7 +122,7 @@ All benchmark metrics below represent genuine, reproducible data generated from 
 | **burst** | stand-in | 60 | 10 | 360.0 | 22,632.0 / 31,460.6 | 18,593.5 / 32,154.9 |
 | **sustained_overload** | stand-in | 150 | 180 | 50.0 | 12,050.7 / 28,368.0 | 34,684.5 / 138,597.1 |
 | **rpm_halved** | stand-in | 60 | 120 | 30.0 | 13,467.8 / 43,768.1 | 5,560.7 / 44,506.7 |
-| **daily_exhausted** | stand-in | 40 | 60 | 40.0 | 15,338.7 / 27,416.6 | 8,995.3 / 28,763.1 |
+| **daily_exhausted** | stand-in | 40 | 60 | 40.0 | not measured / not measured | 953.3 / 4,780.1 |
 
 ### Table 2b: Outcome Breakdown & Queue Behavior
 | Scenario | Succeeded % | Rate-Limited % | Timed Out / Dropped % | Peak Queue | Tokens/Answer | Modeled Cost / 1k |
@@ -135,7 +135,7 @@ All benchmark metrics below represent genuine, reproducible data generated from 
 | **burst** | 50.0% | 38.3% | 11.7% | 60 | 39 | $0.0279 |
 | **sustained_overload** | 28.0% | 16.7% | 55.3% | 104 | 39 | $0.0279 |
 | **rpm_halved** | 50.0% | 50.0% | 0.0% | 29 | 39 | $0.0278 |
-| **daily_exhausted** | 77.5% | 22.5% | 0.0% | 24 | 39 | $0.0276 |
+| **daily_exhausted** | 0.0% | 100.0% | 0.0% | 7 | not measured | not measured |
 
 ### Table 3: Retrieval Quality Comparison
 Evaluated across 72 real Groq calls (24 questions × 3 settings):
