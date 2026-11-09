@@ -28,8 +28,8 @@ _p99 written as 'not measured' when n < 100 (NumPy linear method)._
 | burst | stand-in | 60 | 10 | 360.0 | 22632.0 / 31460.6 / not measured (n=30) | 18593.5 / 32154.9 / not measured (n=60) |
 | steady | stand-in | 60 | 120 | 30.0 | 899.7 / 1736.0 / not measured (n=53) | 1311.4 / 2307.7 / not measured (n=60) |
 | rpm_halved | stand-in | 60 | 120 | 30.0 | 13467.8 / 43768.1 / not measured (n=30) | 5560.7 / 44506.7 / not measured (n=60) |
-| daily_exhausted | stand-in | 40 | 60 | 40.0 | 15338.7 / 27416.6 / not measured (n=31) | 8995.3 / 28763.1 / not measured (n=40) |
 | sustained_overload | stand-in | 150 | 180 | 50.0 | 12050.7 / 28368.0 / not measured (n=42) | 34684.5 / 138597.1 / 163605.2 |
+| daily_exhausted | stand-in | 40 | 60 | 40.0 | not measured / not measured / not measured | 953.3 / 4780.1 / not measured (n=40) |
 
 
 ## TABLE 2b: Outcomes (same rows as Table 2a)
@@ -46,8 +46,8 @@ _`tokens/answer` denominator = status==ok (may include extractive). Cost = list-
 | burst | 50.0% | 38.3% | 11.7% | 0.00 | 60 | 39 | $0.0279 |
 | steady | 88.3% | 11.7% | 0.0% | 0.00 | 5 | 39 | $0.0280 |
 | rpm_halved | 50.0% | 50.0% | 0.0% | 0.00 | 29 | 39 | $0.0278 |
-| daily_exhausted | 77.5% | 22.5% | 0.0% | 0.00 | 24 | 39 | $0.0276 |
 | sustained_overload | 28.0% | 16.7% | 55.3% | 0.00 | 104 | 39 | $0.0279 |
+| daily_exhausted | 0.0% | 100.0% | 0.0% | 0.00 | 7 | not measured | not measured |
 
 
 ## TABLE 3: Retrieval Settings

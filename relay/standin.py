@@ -165,11 +165,11 @@ class StandinService:
     def _update_scheduled_events(self) -> None:
         """Check if any scheduled events (RPM halve, daily exhaust) should trigger."""
         elapsed = self._elapsed()
-        if self.config.halve_rpm_at_s and elapsed >= self.config.halve_rpm_at_s:
+        if self.config.halve_rpm_at_s is not None and elapsed >= self.config.halve_rpm_at_s:
             if not self._quota._rpm_halved:
                 logger.info(f"[StandIn] Halving RPM at t={elapsed:.1f}s")
                 self._quota.halve_rpm()
-        if self.config.daily_exhaust_at_s and elapsed >= self.config.daily_exhaust_at_s:
+        if self.config.daily_exhaust_at_s is not None and elapsed >= self.config.daily_exhaust_at_s:
             if not self._quota._day_exhausted:
                 logger.info(f"[StandIn] Exhausting daily quota at t={elapsed:.1f}s")
                 self._quota.exhaust_daily()

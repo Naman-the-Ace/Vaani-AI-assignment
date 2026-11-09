@@ -27,7 +27,7 @@ The pipeline implements ≥4 sequential steps, ≥1 real tool call (Groq `plan_q
 |---|---|---|---|
 | 1706.03762v7 | Attention Is All You Need (Transformer) | 15 | 93/65/46 |
 | 2410.00037v1 | Moshi: a speech-text foundation model | 20 | 102/70/51 |
-| 2507.07955v2 | Advances in RAG systems | 12 | 84/60/40 |
+| 2507.07955v2 | Dynamic Chunking for End-to-End Hierarchical Sequence Modeling (H-Net) | 39 | 84/60/40 |
 
 ---
 
@@ -106,7 +106,7 @@ The stand-in is a FastAPI server that simulates Groq's behavior without consumin
 | burst | stand-in | 60 | 10 | 360.0 | 22,632.0 / 31,460.6 / n.m. (n=30) | 18,593.5 / 32,154.9 / n.m. (n=60) |
 | sustained_overload | stand-in | 150 | 180 | 50.0 | 12,050.7 / 28,368.0 / n.m. (n=42) | 34,684.5 / 138,597.1 / 163,605.2 (n=150) |
 | rpm_halved | stand-in | 60 | 120 | 30.0 | 13,467.8 / 43,768.1 / n.m. (n=30) | 5,560.7 / 44,506.7 / n.m. (n=60) |
-| daily_exhausted | stand-in | 40 | 60 | 40.0 | 15,338.7 / 27,416.6 / n.m. (n=31) | 8,995.3 / 28,763.1 / n.m. (n=40) |
+| daily_exhausted | stand-in | 40 | 60 | 40.0 | n/a (all rate-limited) | n.m. (n=0 successful) | n.m. (n=40) |
 
 *p99 values marked n.m. = not measured (n < 100 observations per assignment requirement; sustained_overload has n=150 ≥ 100).*
 
@@ -124,7 +124,7 @@ The stand-in is a FastAPI server that simulates Groq's behavior without consumin
 | burst | 50.0% | 38.3% | 11.7% | 0.00 | 60 | 39 | $0.0279 |
 | sustained_overload | 28.0% | 16.7% | 55.3% | 0.00 | 104 | 39 | $0.0279 |
 | rpm_halved | 50.0% | 50.0% | 0.0% | 0.00 | 29 | 39 | $0.0278 |
-| daily_exhausted | 77.5% | 22.5% | 0.0% | 0.00 | 24 | 39 | $0.0276 |
+| daily_exhausted | 0.0% | 100.0% | 0.0% | 0.00 | 7 | n/a | n/a |
 
 ### Table 3 — Retrieval Quality (Human-Graded Real Data)
 
@@ -234,7 +234,7 @@ The three pinned papers contain several traps for naïve BM25 or embedding retri
 
 ### Trap 1: Shared vocabulary, different meanings
 
-Both the Transformer paper (1706.03762) and the RAG survey (2507.07955) use terms like "attention," "encoder," "decoder," and "retrieval." A query about "attention in RAG" can retrieve passages from the Transformer paper discussing attention mechanisms — which don't answer questions about RAG attention. The naïve retriever ranks by token overlap, not semantic scope.
+Both the Transformer paper (1706.03762) and the Dynamic Chunking paper (2507.07955) use terms like "attention," "encoder," "decoder," and "retrieval." A query about "attention in RAG" can retrieve passages from the Transformer paper discussing attention mechanisms — which don't answer questions about RAG attention. The naïve retriever ranks by token overlap, not semantic scope.
 
 **Evidence gate response:** Our gate checks that at least one retrieved passage contains a direct answer keyword before forwarding to generation. This catches some cross-paper contamination.
 
@@ -244,7 +244,7 @@ The Transformer paper has gone through 7 revisions. Some earlier versions report
 
 ### Trap 3: Moshi's vocabulary overlap with general speech papers
 
-Moshi (2410.00037) uses terms like "codec," "tokens," and "streaming" in specialized ways. The RAG survey uses "tokens" and "retrieval" in different contexts. A BM25 retriever can rank Moshi chunks for RAG questions just because both papers use the word "tokens" frequently.
+Moshi (2410.00037) uses terms like "codec," "tokens," and "streaming" in specialized ways. The Dynamic Chunking paper (2507.07955) uses "tokens" and "sequences" in a hierarchical modeling context. A BM25 retriever can rank Moshi chunks for Dynamic Chunking questions just because both papers use the word "tokens" frequently.
 
 ### Trap 4: Mathematical notation in text
 
@@ -266,6 +266,10 @@ Formulas like `d_k = 64` appear in the PDF as mixed text/math, and PDF extractio
 **What happened during the probe run:** 2 of 15 calls received 429 responses. Both were TPM-triggered (`x-ratelimit-reset-tokens: 592ms`). The Groq SDK auto-retried with its built-in backoff before our layer saw the error, adding ~2 seconds to those requests. This is recorded in `traces.jsonl` as `validation_failed` or `plan_tool_call` events.
 
 **Retry that made things worse:** One probe call (Q5, "How does Moshi handle real-time speech?") received a TPM 429 after the planner call. The SDK retried, adding 2 seconds. The retry's generation then produced an extra-long response (hitting `max_tokens=512`), which still had no inline citations — resulting in `evidence_refusal` after 8.3 seconds total. Without the retry, the system would have failed at ~6 seconds with the same refusal. The retry bought nothing except 2 extra seconds of latency.
+
+**Note on `retries` column in results.csv:** The `retries` column shows `0.00` for all stand-in scenario rows. This is expected: the scenario runner (`cmd_scenario`) dispatches open-loop HTTP requests directly to the stand-in and treats `429` as a terminal `rate_limited` outcome without retry instrumentation in this code path. The retry logic described above operates in the full pipeline (`relay_one_request()`), which is exercised in the real Groq probe and eval runs. The stand-in scenario runner is designed to measure raw throughput and queue behavior, not retry dynamics.
+
+**Note on `peak_queue` column:** The `peak_queue` metric in Table 2b represents concurrent open `asyncio` HTTP tasks in the scenario dispatcher (open-loop). This is distinct from the application scheduler's `BoundedQueue` (maxsize=24 in `relay/control.py`), which enforces admission control in the full pipeline. The scenario dispatcher fires requests without admission control to generate true open-loop traffic; peak values can therefore exceed 24.
 
 ---
 
@@ -298,7 +302,7 @@ If you need an answer sooner, you may consult the original papers directly:
 
 **What the pipeline does not do:** It does not retry (which would waste the last remaining requests on another guaranteed failure). It does not silently return an empty answer. It does not fall back to answering from the model's training data without grounding.
 
-**Key measurement:** `queue_wait_ms = 0` (request is refused at the gate before even queuing), `work_ms < 500 ms`, `total_ms < 500 ms`. The capacity notice is the cheapest possible response.
+**Key measurement (corrected):** `queue_wait_ms = 0` (request is refused at the gate before even queuing), `work_ms < 15 ms` (HTTP round-trip to stand-in only), `total_ms < 15 ms`. All 40 offered requests received immediate `rate_limited` responses (0% succeeded, 100% rate-limited). The stand-in `daily_exhaust_at_s=0.0` was confirmed correct after fixing a Python truthiness bug (see `audit/bug_fix_report.md`): `0.0` evaluated as `False` in the original `if self.config.daily_exhaust_at_s:` check; fixed to `if self.config.daily_exhaust_at_s is not None:`. The capacity notice is the cheapest possible response — sub-15ms round-trip.
 
 ---
 
