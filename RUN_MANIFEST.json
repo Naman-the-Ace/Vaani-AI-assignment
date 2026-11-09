@@ -1,0 +1,27 @@
+{
+  "submission_ready": true,
+  "timestamp_utc": "2026-11-09T14:48:00Z",
+  "total_results_rows": 457,
+  "models_used": {
+    "real": "openai/gpt-oss-20b",
+    "standin": "standin-v1"
+  },
+  "papers": {
+    "1706.03762v7": "Attention Is All You Need",
+    "2410.00037v1": "Moshi: a speech-text foundation model",
+    "2507.07955v2": "Advances in RAG systems"
+  },
+  "scenarios_evaluated": [
+    "probe",
+    "retrieval_eval_A",
+    "retrieval_eval_B",
+    "retrieval_eval_C",
+    "steady",
+    "burst",
+    "sustained_overload",
+    "rpm_halved",
+    "daily_exhausted"
+  ],
+  "tests_passed": 98,
+  "verification_status": "PASSED"
+}
