@@ -1,0 +1,36 @@
+{
+  "1706.03762v7": {
+    "sha256": "bdfaa68d8984f0dc02beaca527b76f207d99b666d31d1da728ee0728182df697",
+    "title": "Attention Is All You Need",
+    "url": "https://arxiv.org/pdf/1706.03762v7",
+    "version": 7,
+    "num_pages": 15,
+    "download_ts": "2026-11-09T13:40:15Z",
+    "extraction_notes": [
+      "WARNING: arxiv ID 1706.03762 not found in page 1 text"
+    ]
+  },
+  "2410.00037v1": {
+    "sha256": "a687144cc77bea86b0c60ae800ccb1d3e0816033fa5c7960388fe29a0dbfcfac",
+    "title": "Moshi: a speech-text foundation model for real-time dialogue",
+    "url": "https://arxiv.org/pdf/2410.00037v1",
+    "version": 1,
+    "num_pages": 66,
+    "download_ts": "2026-11-09T13:40:20Z",
+    "extraction_notes": [
+      "WARNING: arxiv ID 2410.00037 not found in page 1 text"
+    ]
+  },
+  "2507.07955v2": {
+    "sha256": "04a2b32e6e82853cfc23c5db132750874a86cde99219ec6f664128f4aa83122f",
+    "title": "Dynamic Chunking for End-to-End Hierarchical Sequence Modeling",
+    "url": "https://arxiv.org/pdf/2507.07955v2",
+    "version": 2,
+    "num_pages": 39,
+    "download_ts": "2026-11-09T13:40:25Z",
+    "extraction_notes": [
+      "WARNING: arxiv ID 2507.07955 not found in page 1 text",
+      "PDF title: 'Dynamic Chunking for End-to-End Hierarchical Sequence Modeling'"
+    ]
+  }
+}
