@@ -1,0 +1,15 @@
+{
+  "n_samples": 15,
+  "timestamp": "2026-11-09T13:48:33Z",
+  "model": "measured",
+  "ttft_ms": {
+    "median": 659.2977999971481,
+    "p95": 1163.059290000091,
+    "std": 322.3303211126142
+  },
+  "total_ms": {
+    "median": 4109.220799997274,
+    "p95": 7905.908990001989
+  },
+  "note": "Small sample (n<40). p95/p99 not reliable. Used for stand-in calibration only."
+}
