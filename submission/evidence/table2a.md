@@ -12,5 +12,5 @@ _p99 written as 'not measured' when n < 100 (NumPy linear method)._
 | burst | stand-in | 60 | 10 | 360.0 | 22632.0 / 31460.6 / not measured (n=30) | 18593.5 / 32154.9 / not measured (n=60) |
 | steady | stand-in | 60 | 120 | 30.0 | 899.7 / 1736.0 / not measured (n=53) | 1311.4 / 2307.7 / not measured (n=60) |
 | rpm_halved | stand-in | 60 | 120 | 30.0 | 13467.8 / 43768.1 / not measured (n=30) | 5560.7 / 44506.7 / not measured (n=60) |
-| daily_exhausted | stand-in | 40 | 60 | 40.0 | 15338.7 / 27416.6 / not measured (n=31) | 8995.3 / 28763.1 / not measured (n=40) |
 | sustained_overload | stand-in | 150 | 180 | 50.0 | 12050.7 / 28368.0 / not measured (n=42) | 34684.5 / 138597.1 / 163605.2 |
+| daily_exhausted | stand-in | 40 | 60 | 40.0 | not measured / not measured / not measured | 953.3 / 4780.1 / not measured (n=40) |

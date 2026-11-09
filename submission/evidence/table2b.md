@@ -12,5 +12,5 @@ _`tokens/answer` denominator = status==ok (may include extractive). Cost = list-
 | burst | 50.0% | 38.3% | 11.7% | 0.00 | 60 | 39 | $0.0279 |
 | steady | 88.3% | 11.7% | 0.0% | 0.00 | 5 | 39 | $0.0280 |
 | rpm_halved | 50.0% | 50.0% | 0.0% | 0.00 | 29 | 39 | $0.0278 |
-| daily_exhausted | 77.5% | 22.5% | 0.0% | 0.00 | 24 | 39 | $0.0276 |
 | sustained_overload | 28.0% | 16.7% | 55.3% | 0.00 | 104 | 39 | $0.0279 |
+| daily_exhausted | 0.0% | 100.0% | 0.0% | 0.00 | 7 | not measured | not measured |
