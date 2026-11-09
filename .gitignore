@@ -1,0 +1,37 @@
+# Secrets - never commit
+.env
+*.env
+.env.*
+!.env.example
+
+# Python
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+.pytest_cache/
+.mypy_cache/
+
+# Large data
+data/papers/*.pdf
+pytest-cache-files-*/
+
+# Private creds / cookies
+*.cookie
+auth_*.json
+*_token.txt
+private_*.json
+
+# Temp
+*.tmp
+*.bak
+scratch/
+
+# OS
+.DS_Store
+Thumbs.db

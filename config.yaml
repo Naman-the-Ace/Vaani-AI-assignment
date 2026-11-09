@@ -1,0 +1,82 @@
+# Vaani Relay - Frozen configuration
+# DO NOT change retrieval settings after evaluation has started.
+# Version this file; include its hash in RUN_MANIFEST.json
+
+model: "llama-3.3-70b-versatile"       # fallback if gpt-oss-20b unavailable
+model_preferred: "openai/gpt-oss-20b"  # check availability at runtime
+
+# Queue / concurrency
+max_queue: 24
+max_in_flight: 3
+max_model_retries: 1
+max_retrieval_rewrites: 1
+max_completion_tokens: 256
+reserve_input_multiplier: 1.15
+end_to_end_deadline_ms: null           # set from observed p95 * 4 at runtime
+queue_policy: fifo_with_deadline_pruning
+
+# Retrieval settings (frozen before evaluation)
+retrieval_settings:
+  A:
+    chunk_tokens: 300
+    overlap_pct: 0.10
+    bm25_candidates: 2
+    final_top_k: 2
+    rerank: false
+    description: "300-token chunks, BM25 top-2, no rerank (cheapest)"
+  B:
+    chunk_tokens: 500
+    overlap_pct: 0.10
+    bm25_candidates: 3
+    final_top_k: 3
+    rerank: false
+    description: "500-token chunks, BM25 top-3, no rerank (balanced)"
+  C:
+    chunk_tokens: 700
+    overlap_pct: 0.10
+    bm25_candidates: 12
+    final_top_k: 4
+    rerank: true
+    rerank_method: "bm25_diversify"   # local deterministic, not neural
+    description: "700-token chunks, BM25 top-12, local BM25-diversify rerank, top-4"
+
+# Paper versions (DO NOT change)
+papers:
+  - arxiv_id: "1706.03762"
+    version: 7
+    url: "https://arxiv.org/pdf/1706.03762v7"
+    title: "Attention Is All You Need"
+  - arxiv_id: "2410.00037"
+    version: 1
+    url: "https://arxiv.org/pdf/2410.00037v1"
+    title: "Moshi: a speech-text foundation model for real-time dialogue"
+  - arxiv_id: "2507.07955"
+    version: 2
+    url: "https://arxiv.org/pdf/2507.07955v2"
+    title: "Dynamic Chunking for End-to-End Hierarchical Sequence Modeling"
+
+# Stand-in service
+standin:
+  host: "127.0.0.1"
+  port: 8765
+  default_seed: 2026
+
+# Groq rate limits (from account console - fill in after checking)
+# These are reference; actual limits from headers override at runtime
+groq_limits:
+  rpm: null           # fill from console
+  tpm: null           # fill from console
+  rpd: null           # fill from console
+  tpd: null           # fill from console
+  concurrency: null   # fill from observation
+
+# Probe config
+probe:
+  target_calls: 20
+  max_calls: 40
+
+# Evaluation
+eval:
+  questions_file: "data/questions.jsonl"
+  temperature: 0.0
+  seed: 42
