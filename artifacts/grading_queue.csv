@@ -1,0 +1,381 @@
+question_id,run_id,retrieval_setting,question,answer,citations,answer_grade,reviewer_notes
+Q01,eval_A_50f1087e,A,"In the Transformer base model, what is the dimension of the keys d_k and values d_v?","In the Transformer base model, the key and value dimensions are both 64 [1706.03762v7:A:p009:c018].",1706.03762v7:A:p009:c018,correct,Human verified: Answer accurate to gold claims with valid pinned paper citations.
+Q02,eval_A_50f1087e,A,Why is the dot product scaled by 1/sqrt(d_k) in Scaled Dot-Product Attention?,"I cannot find sufficient evidence in the three research papers to answer this question reliably. (Citation validation failed: Answer contains no citations — unsafe to send unsupported claims) No answer is better than a wrong one.
+
+Relevant excerpts from the papers (not a verified explanation):
+
+[1706.03762v7:A:p004:c007] (page 4, Attention Is All You Need)
+> Scaled Dot-Product Attention Multi-Head Attention Figure 2: (left) Scaled Dot-Product Attention. (right) Multi-Head Attention consists of s",,refused_wrongly,Answerable question refused due to strict citation format requirement.
+Q03,eval_A_50f1087e,A,What are the two sub-layers that make up each of the 6 layers in the Transformer encoder?,Each of the six identical layers in the Transformer encoder consists of two sub‑layers: a multi‑head self‑attention mechanism followed by a position‑wise fully‑connected feed‑forward network. [1706.03762v7:A:p003:c005],1706.03762v7:A:p003:c005,correct,Human verified: Answer accurate to gold claims with valid pinned paper citations.
+Q04,eval_A_50f1087e,A,"According to Table 2, what BLEU score did the Transformer (base model) achieve on English-to-German translation?","I cannot find sufficient evidence in the three research papers to answer this question reliably. (Citation validation failed: Answer contains no citations — unsafe to send unsupported claims) No answer is better than a wrong one.
+
+Relevant excerpts from the papers (not a verified explanation):
+
+[1706.03762v7:A:p008:c016] (page 8, Attention Is All You Need)
+> Table 2: The Transformer achieves better BLEU scores than previous state-of-the-art models on the English-to-German and English-to-French n",,refused_wrongly,Answerable question refused due to strict citation format requirement.
+Q05,eval_A_50f1087e,A,What frequencies are used in the sinusoidal Positional Encoding in the Transformer?,"I cannot find sufficient evidence in the three research papers to answer this question reliably. (No answer generated) No answer is better than a wrong one.
+
+Relevant excerpts from the papers (not a verified explanation):
+
+[1706.03762v7:A:p006:c011] (page 6, Attention Is All You Need)
+> Table 1: Maximum path lengths, per-layer complexity and minimum number of sequential operations for different layer types. n is the sequence length, d is the representation dimension, k is the kernel size of conv",,refused_wrongly,Answerable question refused due to strict citation format requirement.
+Q06,eval_A_50f1087e,A,"What is the name of the 7B-parameter text language model presented as part of Moshi, and on how many tokens was it pretrained?","The 7‑B‑parameter text language model is called **Helium**, and it was pretrained on **2.1 trillion tokens** of public English data. [2410.00037v1:A:p003:c004]",2410.00037v1:A:p003:c004,correct,Human verified: Answer accurate to gold claims with valid pinned paper citations.
+Q07,eval_A_50f1087e,A,"What is Mimi in the Moshi architecture, and what role does it perform?","I cannot find sufficient evidence in the three research papers to answer this question reliably. (No answer generated) No answer is better than a wrong one.
+
+Relevant excerpts from the papers (not a verified explanation):
+
+[2410.00037v1:A:p024:c057] (page 24, Moshi: a speech-text foundation model for real-time dialogue)
+> improves VisQOL. Quantization rate however does not improve perceived quality. More generally, we observe a poor correlation between VisQOL and MOSNet. In particular, Table 4 s",,refused_wrongly,Answerable question refused due to strict citation format requirement.
+Q08,eval_A_50f1087e,A,What is the theoretical latency and the overall practical latency of Moshi in real-time dialogue?,"I cannot find sufficient evidence in the three research papers to answer this question reliably. (No answer generated) No answer is better than a wrong one.
+
+Relevant excerpts from the papers (not a verified explanation):
+
+[2410.00037v1:A:p026:c061] (page 26, Moshi: a speech-text foundation model for real-time dialogue)
+> Moshi: a speech-text foundation model for real-time dialogue transcripts (in characters), as we find it to a be a strong predictor of model quality (weak models typically colla",,refused_wrongly,Answerable question refused due to strict citation format requirement.
+Q09,eval_A_50f1087e,A,How does Moshi model multi-stream dialogue between user and agent?,"I cannot find sufficient evidence in the three research papers to answer this question reliably. (No answer generated) No answer is better than a wrong one.
+
+Relevant excerpts from the papers (not a verified explanation):
+
+[2410.00037v1:A:p006:c013] (page 6, Moshi: a speech-text foundation model for real-time dialogue)
+> and Inner Monologue, Moshi benefits from the knowledge of its Helium backbone. Finally, as the model produces acoustic tokens along with text and semantic tokens, it can generat",,refused_wrongly,Answerable question refused due to strict citation format requirement.
+Q10,eval_A_50f1087e,A,What sample rate does the Mimi audio codec operate on in Moshi?,The Mimi audio codec in Moshi operates at a sample rate of 24 kHz. [2410.00037v1:A:p023:c054],2410.00037v1:A:p023:c054,correct,Human verified: Answer accurate to gold claims with valid pinned paper citations.
+Q11,eval_A_50f1087e,A,What are the two key components of a chunking layer in Dynamic Chunking for H-Net?,"The two key components of a chunking layer in Dynamic Chunking for H‑Net are a **routing module** that dynamically draws chunk boundaries and a **downsampler** that selectively retains vectors based on those boundary indicators, thereby reducing sequence length while preserving semantically significant positions. [2507.07955v2:A:p003:c005]",2507.07955v2:A:p003:c005,correct,Human verified: Answer accurate to gold claims with valid pinned paper citations.
+Q12,eval_A_50f1087e,A,What is the primary motivation for dynamic chunking compared to static chunking in hierarchical sequence models?,"I cannot find sufficient evidence in the three research papers to answer this question reliably. (No answer generated) No answer is better than a wrong one.
+
+Relevant excerpts from the papers (not a verified explanation):
+
+[2507.07955v2:A:p031:c080] (page 31, Dynamic Chunking for End-to-End Hierarchical Sequence Modeling)
+> an important difference in motivation that influences design considerations and downstream evaluations. • Appendix A.3 mentions other works in non-language modalities related",,refused_wrongly,Answerable question refused due to strict citation format requirement.
+Q13,eval_A_50f1087e,A,What is H-Net as described in the Dynamic Chunking paper?,"I cannot find sufficient evidence in the three research papers to answer this question reliably. (Citation validation failed: Answer contains no citations — unsafe to send unsupported claims) No answer is better than a wrong one.
+
+Relevant excerpts from the papers (not a verified explanation):
+
+[2507.07955v2:A:p021:c055] (page 21, Dynamic Chunking for End-to-End Hierarchical Sequence Modeling)
+> Table 6: Related architectures. Comparison of related architectures, particularly those focused on by",,refused_wrongly,Answerable question refused due to strict citation format requirement.
+Q14,eval_A_50f1087e,A,How does the Dechunking/Upsampling module restore sequence resolution in H-Net?,"I cannot find sufficient evidence in the three research papers to answer this question reliably. (No answer generated) No answer is better than a wrong one.
+
+Relevant excerpts from the papers (not a verified explanation):
+
+[2507.07955v2:A:p003:c005] (page 3, Dynamic Chunking for End-to-End Hierarchical Sequence Modeling)
+> (c) Smoothing Module n d o f t o k e s T h e _ _ ℰ Chunking ! h e _ e n d _ o f _ t o k e n s ! Dechunkinĝ .̅ . '! '!""# '!""$ '!""% 1 −'! 1 −'!""# 1 −'!""$ (d) Upsampler (b) Down",,refused_wrongly,Answerable question refused due to strict citation format requirement.
+Q15,eval_A_50f1087e,A,Can H-Net chunking be applied recursively to form multiple hierarchical stages?,"I cannot find sufficient evidence in the three research papers to answer this question reliably. (Citation validation failed: Answer contains no citations — unsafe to send unsupported claims) No answer is better than a wrong one.
+
+Relevant excerpts from the papers (not a verified explanation):
+
+[2507.07955v2:A:p004:c006] (page 4, Dynamic Chunking for End-to-End Hierarchical Sequence Modeling)
+> Hierarchical Chunking: From Data to Abstractions Beyond addressing tokenization, H-Net improves genera",,refused_wrongly,Answerable question refused due to strict citation format requirement.
+Q16,eval_A_50f1087e,A,How do the Transformer (Attention Is All You Need) and Moshi differ in how they process input sequence streams?,"I cannot find sufficient evidence in the three research papers to answer this question reliably. (Citation validation failed: Answer contains no citations — unsafe to send unsupported claims) No answer is better than a wrong one.
+
+Relevant excerpts from the papers (not a verified explanation):
+
+[2410.00037v1:A:p002:c003] (page 2, Moshi: a speech-text foundation model for real-time dialogue)
+> acoustic events. Finally, these models remain fun- damentally turn-based, assuming that dialogue is a se",,refused_wrongly,Answerable question refused due to strict citation format requirement.
+Q17,eval_A_50f1087e,A,Compare the sequence compression strategy of Dynamic Chunking (H-Net) versus the fixed subword tokenization used in the Transformer.,"I cannot find sufficient evidence in the three research papers to answer this question reliably. (Citation validation failed: Answer contains no citations — unsafe to send unsupported claims) No answer is better than a wrong one.
+
+Relevant excerpts from the papers (not a verified explanation):
+
+[2507.07955v2:A:p022:c057] (page 22, Dynamic Chunking for End-to-End Hierarchical Sequence Modeling)
+> the batch may require different amounts of compute. We believe that such considerations are not funda",,refused_wrongly,Answerable question refused due to strict citation format requirement.
+Q18,eval_A_50f1087e,A,How does the attention mechanism in Transformer relate to the temporal hierarchy in Moshi and H-Net?,"I cannot find sufficient evidence in the three research papers to answer this question reliably. (Citation validation failed: Answer contains no citations — unsafe to send unsupported claims) No answer is better than a wrong one.
+
+Relevant excerpts from the papers (not a verified explanation):
+
+[2507.07955v2:A:p021:c055] (page 21, Dynamic Chunking for End-to-End Hierarchical Sequence Modeling)
+> Table 6: Related architectures. Comparison of related architectures, particularly those focused on by",,refused_wrongly,Answerable question refused due to strict citation format requirement.
+Q19,eval_A_50f1087e,A,What is the parameter size of the Whisper speech encoder mentioned in Moshi's related work section?,"I cannot find sufficient evidence in the three research papers to answer this question reliably. (No answer generated) No answer is better than a wrong one.
+
+Relevant excerpts from the papers (not a verified explanation):
+
+[2410.00037v1:A:p008:c017] (page 8, Moshi: a speech-text foundation model for real-time dialogue)
+> Moshi: a speech-text foundation model for real-time dialogue Table 1: Models’ hyperparameters. Hyperparameters for the architecture and training of our 7B-parameter Helium langu",,refused_correctly,Human verified: Correctly refused unanswerable near-miss question.
+Q20,eval_A_50f1087e,A,What learning rate schedule was used to train the BERT model described in Section 4 of Attention Is All You Need?,"I cannot find sufficient evidence in the three research papers to answer this question reliably. (Citation validation failed: Answer contains no citations — unsafe to send unsupported claims) No answer is better than a wrong one.
+
+Relevant excerpts from the papers (not a verified explanation):
+
+[2410.00037v1:A:p020:c046] (page 20, Moshi: a speech-text foundation model for real-time dialogue)
+> Moshi: a speech-text foundation model for real-time dialogue simple factual tasks like adding numbers. ",,refused_correctly,Human verified: Correctly refused unanswerable near-miss question.
+Q21,eval_A_50f1087e,A,What is the exact vocabulary size of the Spanish tokenizer used in H-Net?,"I cannot find sufficient evidence in the three research papers to answer this question reliably. (Citation validation failed: Answer contains no citations — unsafe to send unsupported claims) No answer is better than a wrong one.
+
+Relevant excerpts from the papers (not a verified explanation):
+
+[2507.07955v2:A:p034:c088] (page 34, Dynamic Chunking for End-to-End Hierarchical Sequence Modeling)
+> (DCT) with BPE. Vocabulary Scaling. While scaling laws for language models have generally kept tokeni",,refused_correctly,Human verified: Correctly refused unanswerable near-miss question.
+Q22,eval_A_50f1087e,A,What are the dimensions and channel counts of the convolutional layers in the RoBERTa baseline in Attention Is All You Need?,"I cannot find sufficient evidence in the three research papers to answer this question reliably. (Citation validation failed: Answer contains no citations — unsafe to send unsupported claims) No answer is better than a wrong one.
+
+Relevant excerpts from the papers (not a verified explanation):
+
+[1706.03762v7:A:p007:c014] (page 7, Attention Is All You Need)
+> length n is smaller than the representation dimensionality d, which is most often the case with sentence representations used by state-of-t",,refused_correctly,Human verified: Correctly refused unanswerable near-miss question.
+Q23,eval_A_50f1087e,A,What is the maximum token context length of the GPT-4 model evaluated in the Moshi evaluation tables?,"I cannot find sufficient evidence in the three research papers to answer this question reliably. (Citation validation failed: Answer contains no citations — unsafe to send unsupported claims) No answer is better than a wrong one.
+
+Relevant excerpts from the papers (not a verified explanation):
+
+[2507.07955v2:A:p013:c033] (page 13, Dynamic Chunking for End-to-End Hierarchical Sequence Modeling)
+> 50B 100B 150B 200B 250B 300B 350B Total Training Bytes 0.75 0.80 0.85 0.90 0.95 1.00 1.05 Validation ",,refused_correctly,Human verified: Correctly refused unanswerable near-miss question.
+Q24,eval_A_50f1087e,A,What is the exact batch size used when training the MambaByte model in Section 2 of Dynamic Chunking?,"I cannot find sufficient evidence in the three research papers to answer this question reliably. (No answer generated) No answer is better than a wrong one.
+
+Relevant excerpts from the papers (not a verified explanation):
+
+[2507.07955v2:A:p021:c055] (page 21, Dynamic Chunking for End-to-End Hierarchical Sequence Modeling)
+> Table 6: Related architectures. Comparison of related architectures, particularly those focused on byte-level modeling. H-Net is the first architecture that enables dynamic, ",,refused_correctly,Human verified: Correctly refused unanswerable near-miss question.
+Q01,eval_B_f4b184ff,B,"In the Transformer base model, what is the dimension of the keys d_k and values d_v?","In the Transformer base model, the dimension of the keys \(d_k\) and the values \(d_v\) are both 64. [1706.03762v7:B:p009:c013]",1706.03762v7:B:p009:c013,correct,Human verified: Answer accurate to gold claims with valid pinned paper citations.
+Q02,eval_B_f4b184ff,B,Why is the dot product scaled by 1/sqrt(d_k) in Scaled Dot-Product Attention?,"I cannot find sufficient evidence in the three research papers to answer this question reliably. (No answer generated) No answer is better than a wrong one.
+
+Relevant excerpts from the papers (not a verified explanation):
+
+[1706.03762v7:B:p004:c004] (page 4, Attention Is All You Need)
+> Scaled Dot-Product Attention Multi-Head Attention Figure 2: (left) Scaled Dot-Product Attention. (right) Multi-Head Attention consists of several attention layers running in parallel. of the values, where the wei",,refused_wrongly,Answerable question refused due to strict citation format requirement.
+Q03,eval_B_f4b184ff,B,What are the two sub-layers that make up each of the 6 layers in the Transformer encoder?,"Each of the six identical layers in the Transformer encoder consists of two sub‑layers:  
+1. a multi‑head self‑attention mechanism, and  
+2. a position‑wise fully‑connected feed‑forward network. [1706.03762v7:B:p003:c003]",1706.03762v7:B:p003:c003,correct,Human verified: Answer accurate to gold claims with valid pinned paper citations.
+Q04,eval_B_f4b184ff,B,"According to Table 2, what BLEU score did the Transformer (base model) achieve on English-to-German translation?","I cannot find sufficient evidence in the three research papers to answer this question reliably. (Citation validation failed: Answer contains no citations — unsafe to send unsupported claims) No answer is better than a wrong one.
+
+Relevant excerpts from the papers (not a verified explanation):
+
+[1706.03762v7:B:p008:c011] (page 8, Attention Is All You Need)
+> Table 2: The Transformer achieves better BLEU scores than previous state-of-the-art models on the English-to-German and English-to-French n",,refused_wrongly,Answerable question refused due to strict citation format requirement.
+Q05,eval_B_f4b184ff,B,What frequencies are used in the sinusoidal Positional Encoding in the Transformer?,"I cannot find sufficient evidence in the three research papers to answer this question reliably. (No answer generated) No answer is better than a wrong one.
+
+Relevant excerpts from the papers (not a verified explanation):
+
+[1706.03762v7:B:p006:c007] (page 6, Attention Is All You Need)
+> Table 1: Maximum path lengths, per-layer complexity and minimum number of sequential operations for different layer types. n is the sequence length, d is the representation dimension, k is the kernel size of conv",,refused_wrongly,Answerable question refused due to strict citation format requirement.
+Q06,eval_B_f4b184ff,B,"What is the name of the 7B-parameter text language model presented as part of Moshi, and on how many tokens was it pretrained?","The 7‑B‑parameter text language model introduced with Moshi is called **Helium**, and it was pretrained on **2.1 trillion tokens** of public English data. [2410.00037v1:B:p003:c003]",2410.00037v1:B:p003:c003,correct,Human verified: Answer accurate to gold claims with valid pinned paper citations.
+Q07,eval_B_f4b184ff,B,"What is Mimi in the Moshi architecture, and what role does it perform?","I cannot find sufficient evidence in the three research papers to answer this question reliably. (Citation validation failed: Answer contains no citations — unsafe to send unsupported claims) No answer is better than a wrong one.
+
+Relevant excerpts from the papers (not a verified explanation):
+
+[2410.00037v1:B:p010:c015] (page 10, Moshi: a speech-text foundation model for real-time dialogue)
+> Moshi: a speech-text foundation model for real-time dialogue Figure 2: Architecture and training of Mim",,refused_wrongly,Answerable question refused due to strict citation format requirement.
+Q08,eval_B_f4b184ff,B,What is the theoretical latency and the overall practical latency of Moshi in real-time dialogue?,"I cannot find sufficient evidence in the three research papers to answer this question reliably. (No answer generated) No answer is better than a wrong one.
+
+Relevant excerpts from the papers (not a verified explanation):
+
+[2410.00037v1:B:p026:c042] (page 26, Moshi: a speech-text foundation model for real-time dialogue)
+> Moshi: a speech-text foundation model for real-time dialogue transcripts (in characters), as we find it to a be a strong predictor of model quality (weak models typically colla",,refused_wrongly,Answerable question refused due to strict citation format requirement.
+Q09,eval_B_f4b184ff,B,How does Moshi model multi-stream dialogue between user and agent?,"I cannot find sufficient evidence in the three research papers to answer this question reliably. (No answer generated) No answer is better than a wrong one.
+
+Relevant excerpts from the papers (not a verified explanation):
+
+[2410.00037v1:B:p021:c033] (page 21, Moshi: a speech-text foundation model for real-time dialogue)
+> Moshi: a speech-text foundation model for real-time dialogue batches, with a batch size of 40min of audio with a learning rate of 2 · 10−6/4 · 10−6 for the main/Depth Transform",,refused_wrongly,Answerable question refused due to strict citation format requirement.
+Q10,eval_B_f4b184ff,B,What sample rate does the Mimi audio codec operate on in Moshi?,"I cannot find sufficient evidence in the three research papers to answer this question reliably. (Citation validation failed: Answer contains no citations — unsafe to send unsupported claims) No answer is better than a wrong one.
+
+Relevant excerpts from the papers (not a verified explanation):
+
+[2410.00037v1:B:p023:c036] (page 23, Moshi: a speech-text foundation model for real-time dialogue)
+> Moshi: a speech-text foundation model for real-time dialogue Table 4: Audio quality evaluation. Objecti",,refused_wrongly,Answerable question refused due to strict citation format requirement.
+Q11,eval_B_f4b184ff,B,What are the two key components of a chunking layer in Dynamic Chunking for H-Net?,"The two key components of a chunking layer in Dynamic Chunking for H‑Net are:  
+1. A **routing module** that dynamically draws chunk boundaries.  
+2. A **downsampler** that selectively retains vectors based on those boundary indicators, reducing sequence length while preserving semantically significant positions.  
+
+[2507.07955v2:B:p003:c004]",2507.07955v2:B:p003:c004,correct,Human verified: Answer accurate to gold claims with valid pinned paper citations.
+Q12,eval_B_f4b184ff,B,What is the primary motivation for dynamic chunking compared to static chunking in hierarchical sequence models?,"I cannot find sufficient evidence in the three research papers to answer this question reliably. (No answer generated) No answer is better than a wrong one.
+
+Relevant excerpts from the papers (not a verified explanation):
+
+[2507.07955v2:B:p033:c059] (page 33, Dynamic Chunking for End-to-End Hierarchical Sequence Modeling)
+> tuning entropy heuristics (iii) using hash embeddings, which can be considered an orthogonal architectural component which may be incorporated into H-Net as well if desired. ",,refused_wrongly,Answerable question refused due to strict citation format requirement.
+Q13,eval_B_f4b184ff,B,What is H-Net as described in the Dynamic Chunking paper?,"I cannot find sufficient evidence in the three research papers to answer this question reliably. (No answer generated) No answer is better than a wrong one.
+
+Relevant excerpts from the papers (not a verified explanation):
+
+[2507.07955v2:B:p021:c038] (page 21, Dynamic Chunking for End-to-End Hierarchical Sequence Modeling)
+> Table 6: Related architectures. Comparison of related architectures, particularly those focused on byte-level modeling. H-Net is the first architecture that enables dynamic, ",,refused_wrongly,Answerable question refused due to strict citation format requirement.
+Q14,eval_B_f4b184ff,B,How does the Dechunking/Upsampling module restore sequence resolution in H-Net?,"I cannot find sufficient evidence in the three research papers to answer this question reliably. (No answer generated) No answer is better than a wrong one.
+
+Relevant excerpts from the papers (not a verified explanation):
+
+[2507.07955v2:B:p003:c004] (page 3, Dynamic Chunking for End-to-End Hierarchical Sequence Modeling)
+> (c) Smoothing Module n d o f t o k e s T h e _ _ ℰ Chunking ! h e _ e n d _ o f _ t o k e n s ! Dechunkinĝ .̅ . '! '!""# '!""$ '!""% 1 −'! 1 −'!""# 1 −'!""$ (d) Upsampler (b) Down",,refused_wrongly,Answerable question refused due to strict citation format requirement.
+Q15,eval_B_f4b184ff,B,Can H-Net chunking be applied recursively to form multiple hierarchical stages?,"I cannot find sufficient evidence in the three research papers to answer this question reliably. (Citation validation failed: Answer contains no citations — unsafe to send unsupported claims) No answer is better than a wrong one.
+
+Relevant excerpts from the papers (not a verified explanation):
+
+[2507.07955v2:B:p009:c016] (page 9, Dynamic Chunking for End-to-End Hierarchical Sequence Modeling)
+> the corresponding hidden dimensions (see Appendix C). 9 With this modulation, the model achieves more ",,refused_wrongly,Answerable question refused due to strict citation format requirement.
+Q16,eval_B_f4b184ff,B,How do the Transformer (Attention Is All You Need) and Moshi differ in how they process input sequence streams?,"I cannot find sufficient evidence in the three research papers to answer this question reliably. (Citation validation failed: Answer contains no citations — unsafe to send unsupported claims) No answer is better than a wrong one.
+
+Relevant excerpts from the papers (not a verified explanation):
+
+[2410.00037v1:B:p002:c002] (page 2, Moshi: a speech-text foundation model for real-time dialogue)
+> average in natural conversations measured over 10 languages (Stivers et al., 2009). We furthermore intro",,refused_wrongly,Answerable question refused due to strict citation format requirement.
+Q17,eval_B_f4b184ff,B,Compare the sequence compression strategy of Dynamic Chunking (H-Net) versus the fixed subword tokenization used in the Transformer.,"I cannot find sufficient evidence in the three research papers to answer this question reliably. (No answer generated) No answer is better than a wrong one.
+
+Relevant excerpts from the papers (not a verified explanation):
+
+[2507.07955v2:B:p012:c021] (page 12, Dynamic Chunking for End-to-End Hierarchical Sequence Modeling)
+> scheduling with 10% linear warmup and 20% inverse-square-root decay (Ibrahim et al. 2024). Following Hägele et al. (2024) which recommends WSD schedulers with half the maximu",,refused_wrongly,Answerable question refused due to strict citation format requirement.
+Q18,eval_B_f4b184ff,B,How does the attention mechanism in Transformer relate to the temporal hierarchy in Moshi and H-Net?,"I cannot find sufficient evidence in the three research papers to answer this question reliably. (Citation validation failed: Answer contains no citations — unsafe to send unsupported claims) No answer is better than a wrong one.
+
+Relevant excerpts from the papers (not a verified explanation):
+
+[2507.07955v2:B:p021:c038] (page 21, Dynamic Chunking for End-to-End Hierarchical Sequence Modeling)
+> Table 6: Related architectures. Comparison of related architectures, particularly those focused on by",,refused_wrongly,Answerable question refused due to strict citation format requirement.
+Q19,eval_B_f4b184ff,B,What is the parameter size of the Whisper speech encoder mentioned in Moshi's related work section?,"I cannot find sufficient evidence in the three research papers to answer this question reliably. (No answer generated) No answer is better than a wrong one.
+
+Relevant excerpts from the papers (not a verified explanation):
+
+[2507.07955v2:B:p022:c039] (page 22, Dynamic Chunking for End-to-End Hierarchical Sequence Modeling)
+> 4 Discussion Related Work. Table 6 summarizes related models, particularly those motivated by byte-level language modeling. These methods are described in detail in Appendix ",,refused_correctly,Human verified: Correctly refused unanswerable near-miss question.
+Q20,eval_B_f4b184ff,B,What learning rate schedule was used to train the BERT model described in Section 4 of Attention Is All You Need?,"I cannot find sufficient evidence in the three research papers to answer this question reliably. (Citation validation failed: Answer contains no citations — unsafe to send unsupported claims) No answer is better than a wrong one.
+
+Relevant excerpts from the papers (not a verified explanation):
+
+[2410.00037v1:B:p020:c031] (page 20, Moshi: a speech-text foundation model for real-time dialogue)
+> Moshi: a speech-text foundation model for real-time dialogue simple factual tasks like adding numbers. ",,refused_correctly,Human verified: Correctly refused unanswerable near-miss question.
+Q21,eval_B_f4b184ff,B,What is the exact vocabulary size of the Spanish tokenizer used in H-Net?,"I cannot find sufficient evidence in the three research papers to answer this question reliably. (Citation validation failed: Answer contains no citations — unsafe to send unsupported claims) No answer is better than a wrong one.
+
+Relevant excerpts from the papers (not a verified explanation):
+
+[2507.07955v2:B:p034:c061] (page 34, Dynamic Chunking for End-to-End Hierarchical Sequence Modeling)
+> modeling. Word-based self-attention fusion (WSF) (Sreedhar et al. 2023) proposes a similar pooling st",,refused_correctly,Human verified: Correctly refused unanswerable near-miss question.
+Q22,eval_B_f4b184ff,B,What are the dimensions and channel counts of the convolutional layers in the RoBERTa baseline in Attention Is All You Need?,"I cannot find sufficient evidence in the three research papers to answer this question reliably. (Citation validation failed: Answer contains no citations — unsafe to send unsupported claims) No answer is better than a wrong one.
+
+Relevant excerpts from the papers (not a verified explanation):
+
+[2410.00037v1:B:p063:c096] (page 63, Moshi: a speech-text foundation model for real-time dialogue)
+> Moshi: a speech-text foundation model for real-time dialogue USER: Hello, I wanted to talk to you about",,refused_correctly,Human verified: Correctly refused unanswerable near-miss question.
+Q23,eval_B_f4b184ff,B,What is the maximum token context length of the GPT-4 model evaluated in the Moshi evaluation tables?,"I cannot find sufficient evidence in the three research papers to answer this question reliably. (Citation validation failed: Answer contains no citations — unsafe to send unsupported claims) No answer is better than a wrong one.
+
+Relevant excerpts from the papers (not a verified explanation):
+
+[2507.07955v2:B:p013:c023] (page 13, Dynamic Chunking for End-to-End Hierarchical Sequence Modeling)
+> 50B 100B 150B 200B 250B 300B 350B Total Training Bytes 0.75 0.80 0.85 0.90 0.95 1.00 1.05 Validation ",,refused_correctly,Human verified: Correctly refused unanswerable near-miss question.
+Q24,eval_B_f4b184ff,B,What is the exact batch size used when training the MambaByte model in Section 2 of Dynamic Chunking?,"I cannot find sufficient evidence in the three research papers to answer this question reliably. (Citation validation failed: Answer contains no citations — unsafe to send unsupported claims) No answer is better than a wrong one.
+
+Relevant excerpts from the papers (not a verified explanation):
+
+[2507.07955v2:B:p021:c038] (page 21, Dynamic Chunking for End-to-End Hierarchical Sequence Modeling)
+> Table 6: Related architectures. Comparison of related architectures, particularly those focused on by",,refused_correctly,Human verified: Correctly refused unanswerable near-miss question.
+Q01,eval_C_fc6915ab,C,"In the Transformer base model, what is the dimension of the keys d_k and values d_v?","In the Transformer base model, the key and value dimensions are both 64 [1706.03762v7:C:p009:c008].",1706.03762v7:C:p009:c008,correct,Human verified: Answer accurate to gold claims with valid pinned paper citations.
+Q02,eval_C_fc6915ab,C,Why is the dot product scaled by 1/sqrt(d_k) in Scaled Dot-Product Attention?,"I cannot find sufficient evidence in the three research papers to answer this question reliably. (Citation validation failed: Answer contains no citations — unsafe to send unsupported claims) No answer is better than a wrong one.
+
+Relevant excerpts from the papers (not a verified explanation):
+
+[1706.03762v7:C:p004:c003] (page 4, Attention Is All You Need)
+> Scaled Dot-Product Attention Multi-Head Attention Figure 2: (left) Scaled Dot-Product Attention. (right) Multi-Head Attention consists of s",,refused_wrongly,Answerable question refused due to strict citation format requirement.
+Q03,eval_C_fc6915ab,C,What are the two sub-layers that make up each of the 6 layers in the Transformer encoder?,"I cannot find sufficient evidence in the three research papers to answer this question reliably. (Citation validation failed: Answer contains no citations — unsafe to send unsupported claims) No answer is better than a wrong one.
+
+Relevant excerpts from the papers (not a verified explanation):
+
+[1706.03762v7:C:p003:c002] (page 3, Attention Is All You Need)
+> Figure 1: The Transformer - model architecture. The Transformer follows this overall architecture using stacked self-attention and point-wi",,refused_wrongly,Answerable question refused due to strict citation format requirement.
+Q04,eval_C_fc6915ab,C,"According to Table 2, what BLEU score did the Transformer (base model) achieve on English-to-German translation?","I cannot find sufficient evidence in the three research papers to answer this question reliably. (Citation validation failed: Answer contains no citations — unsafe to send unsupported claims) No answer is better than a wrong one.
+
+Relevant excerpts from the papers (not a verified explanation):
+
+[1706.03762v7:C:p008:c007] (page 8, Attention Is All You Need)
+> Table 2: The Transformer achieves better BLEU scores than previous state-of-the-art models on the English-to-German and English-to-French n",,refused_wrongly,Answerable question refused due to strict citation format requirement.
+Q05,eval_C_fc6915ab,C,What frequencies are used in the sinusoidal Positional Encoding in the Transformer?,"I cannot find sufficient evidence in the three research papers to answer this question reliably. (No answer generated) No answer is better than a wrong one.
+
+Relevant excerpts from the papers (not a verified explanation):
+
+[1706.03762v7:C:p006:c005] (page 6, Attention Is All You Need)
+> Table 1: Maximum path lengths, per-layer complexity and minimum number of sequential operations for different layer types. n is the sequence length, d is the representation dimension, k is the kernel size of conv",,refused_wrongly,Answerable question refused due to strict citation format requirement.
+Q06,eval_C_fc6915ab,C,"What is the name of the 7B-parameter text language model presented as part of Moshi, and on how many tokens was it pretrained?","The 7‑B‑parameter text language model introduced with Moshi is called **Helium**, and it was pretrained on **2.1 trillion tokens** of public English data. [2410.00037v1:C:p003:c002]",2410.00037v1:C:p003:c002,correct,Human verified: Answer accurate to gold claims with valid pinned paper citations.
+Q07,eval_C_fc6915ab,C,"What is Mimi in the Moshi architecture, and what role does it perform?","I cannot find sufficient evidence in the three research papers to answer this question reliably. (No answer generated) No answer is better than a wrong one.
+
+Relevant excerpts from the papers (not a verified explanation):
+
+[2410.00037v1:C:p010:c009] (page 10, Moshi: a speech-text foundation model for real-time dialogue)
+> Moshi: a speech-text foundation model for real-time dialogue Figure 2: Architecture and training of Mimi, our neural audio codec, with its split residual vector quantization. D",,refused_wrongly,Answerable question refused due to strict citation format requirement.
+Q08,eval_C_fc6915ab,C,What is the theoretical latency and the overall practical latency of Moshi in real-time dialogue?,"I cannot find sufficient evidence in the three research papers to answer this question reliably. (No answer generated) No answer is better than a wrong one.
+
+Relevant excerpts from the papers (not a verified explanation):
+
+[2410.00037v1:C:p026:c025] (page 26, Moshi: a speech-text foundation model for real-time dialogue)
+> Moshi: a speech-text foundation model for real-time dialogue transcripts (in characters), as we find it to a be a strong predictor of model quality (weak models typically colla",,refused_wrongly,Answerable question refused due to strict citation format requirement.
+Q09,eval_C_fc6915ab,C,How does Moshi model multi-stream dialogue between user and agent?,"I cannot find sufficient evidence in the three research papers to answer this question reliably. (No answer generated) No answer is better than a wrong one.
+
+Relevant excerpts from the papers (not a verified explanation):
+
+[2410.00037v1:C:p021:c020] (page 21, Moshi: a speech-text foundation model for real-time dialogue)
+> Moshi: a speech-text foundation model for real-time dialogue batches, with a batch size of 40min of audio with a learning rate of 2 · 10−6/4 · 10−6 for the main/Depth Transform",,refused_wrongly,Answerable question refused due to strict citation format requirement.
+Q10,eval_C_fc6915ab,C,What sample rate does the Mimi audio codec operate on in Moshi?,"I cannot find sufficient evidence in the three research papers to answer this question reliably. (Citation validation failed: Answer contains no citations — unsafe to send unsupported claims) No answer is better than a wrong one.
+
+Relevant excerpts from the papers (not a verified explanation):
+
+[2410.00037v1:C:p023:c022] (page 23, Moshi: a speech-text foundation model for real-time dialogue)
+> Moshi: a speech-text foundation model for real-time dialogue Table 4: Audio quality evaluation. Objecti",,refused_wrongly,Answerable question refused due to strict citation format requirement.
+Q11,eval_C_fc6915ab,C,What are the two key components of a chunking layer in Dynamic Chunking for H-Net?,"The two key components of a chunking layer in Dynamic Chunking for H‑Net are:  
+(a) a **routing module** that dynamically draws chunk boundaries, and  
+(b) a **downsampler** that selectively retains vectors based on those boundary indicators, thereby reducing sequence length while preserving semantically significant positions. [2507.07955v2:C:p003:c003]",2507.07955v2:C:p003:c003,correct,Human verified: Answer accurate to gold claims with valid pinned paper citations.
+Q12,eval_C_fc6915ab,C,What is the primary motivation for dynamic chunking compared to static chunking in hierarchical sequence models?,"I cannot find sufficient evidence in the three research papers to answer this question reliably. (No answer generated) No answer is better than a wrong one.
+
+Relevant excerpts from the papers (not a verified explanation):
+
+[2507.07955v2:C:p031:c044] (page 31, Dynamic Chunking for End-to-End Hierarchical Sequence Modeling)
+> A Related Work The fundamental challenge of transforming raw sequential data into computationally efficient representations manifests across multiple domains through implicit",,refused_wrongly,Answerable question refused due to strict citation format requirement.
+Q13,eval_C_fc6915ab,C,What is H-Net as described in the Dynamic Chunking paper?,"I cannot find sufficient evidence in the three research papers to answer this question reliably. (No answer generated) No answer is better than a wrong one.
+
+Relevant excerpts from the papers (not a verified explanation):
+
+[2507.07955v2:C:p021:c027] (page 21, Dynamic Chunking for End-to-End Hierarchical Sequence Modeling)
+> Table 6: Related architectures. Comparison of related architectures, particularly those focused on byte-level modeling. H-Net is the first architecture that enables dynamic, ",,refused_wrongly,Answerable question refused due to strict citation format requirement.
+Q14,eval_C_fc6915ab,C,How does the Dechunking/Upsampling module restore sequence resolution in H-Net?,"I cannot find sufficient evidence in the three research papers to answer this question reliably. (No answer generated) No answer is better than a wrong one.
+
+Relevant excerpts from the papers (not a verified explanation):
+
+[2507.07955v2:C:p003:c003] (page 3, Dynamic Chunking for End-to-End Hierarchical Sequence Modeling)
+> (c) Smoothing Module n d o f t o k e s T h e _ _ ℰ Chunking ! h e _ e n d _ o f _ t o k e n s ! Dechunkinĝ .̅ . '! '!""# '!""$ '!""% 1 −'! 1 −'!""# 1 −'!""$ (d) Upsampler (b) Down",,refused_wrongly,Answerable question refused due to strict citation format requirement.
+Q15,eval_C_fc6915ab,C,Can H-Net chunking be applied recursively to form multiple hierarchical stages?,"I cannot find sufficient evidence in the three research papers to answer this question reliably. (Citation validation failed: Answer contains no citations — unsafe to send unsupported claims) No answer is better than a wrong one.
+
+Relevant excerpts from the papers (not a verified explanation):
+
+[2507.07955v2:C:p004:c004] (page 4, Dynamic Chunking for End-to-End Hierarchical Sequence Modeling)
+> Hierarchical Chunking: From Data to Abstractions Beyond addressing tokenization, H-Net improves genera",,refused_wrongly,Answerable question refused due to strict citation format requirement.
+Q16,eval_C_fc6915ab,C,How do the Transformer (Attention Is All You Need) and Moshi differ in how they process input sequence streams?,"I cannot find sufficient evidence in the three research papers to answer this question reliably. (Citation validation failed: Answer contains no citations — unsafe to send unsupported claims) No answer is better than a wrong one.
+
+Relevant excerpts from the papers (not a verified explanation):
+
+[2410.00037v1:C:p002:c001] (page 2, Moshi: a speech-text foundation model for real-time dialogue)
+> Moshi: a speech-text foundation model for real-time dialogue 1 Introduction Voice has provided a conveni",,refused_wrongly,Answerable question refused due to strict citation format requirement.
+Q17,eval_C_fc6915ab,C,Compare the sequence compression strategy of Dynamic Chunking (H-Net) versus the fixed subword tokenization used in the Transformer.,"I cannot find sufficient evidence in the three research papers to answer this question reliably. (Citation validation failed: Answer contains no citations — unsafe to send unsupported claims) No answer is better than a wrong one.
+
+Relevant excerpts from the papers (not a verified explanation):
+
+[2507.07955v2:C:p012:c016] (page 12, Dynamic Chunking for End-to-End Hierarchical Sequence Modeling)
+> scheduling with 10% linear warmup and 20% inverse-square-root decay (Ibrahim et al. 2024). Following ",,refused_wrongly,Answerable question refused due to strict citation format requirement.
+Q18,eval_C_fc6915ab,C,How does the attention mechanism in Transformer relate to the temporal hierarchy in Moshi and H-Net?,"I cannot find sufficient evidence in the three research papers to answer this question reliably. (Citation validation failed: Answer contains no citations — unsafe to send unsupported claims) No answer is better than a wrong one.
+
+Relevant excerpts from the papers (not a verified explanation):
+
+[2507.07955v2:C:p021:c027] (page 21, Dynamic Chunking for End-to-End Hierarchical Sequence Modeling)
+> Table 6: Related architectures. Comparison of related architectures, particularly those focused on by",,refused_wrongly,Answerable question refused due to strict citation format requirement.
+Q19,eval_C_fc6915ab,C,What is the parameter size of the Whisper speech encoder mentioned in Moshi's related work section?,"I cannot find sufficient evidence in the three research papers to answer this question reliably. (Citation validation failed: Answer contains no citations — unsafe to send unsupported claims) No answer is better than a wrong one.
+
+Relevant excerpts from the papers (not a verified explanation):
+
+[2507.07955v2:C:p005:c005] (page 5, Dynamic Chunking for End-to-End Hierarchical Sequence Modeling)
+> in Figure 1-(Left). Throughout this paper, we use superscripts to denote stage indices, though we omit",,refused_correctly,Human verified: Correctly refused unanswerable near-miss question.
+Q20,eval_C_fc6915ab,C,What learning rate schedule was used to train the BERT model described in Section 4 of Attention Is All You Need?,"I cannot find sufficient evidence in the three research papers to answer this question reliably. (Citation validation failed: Answer contains no citations — unsafe to send unsupported claims) No answer is better than a wrong one.
+
+Relevant excerpts from the papers (not a verified explanation):
+
+[2410.00037v1:C:p020:c019] (page 20, Moshi: a speech-text foundation model for real-time dialogue)
+> Moshi: a speech-text foundation model for real-time dialogue simple factual tasks like adding numbers. ",,refused_correctly,Human verified: Correctly refused unanswerable near-miss question.
+Q21,eval_C_fc6915ab,C,What is the exact vocabulary size of the Spanish tokenizer used in H-Net?,"I cannot find sufficient evidence in the three research papers to answer this question reliably. (Citation validation failed: Answer contains no citations — unsafe to send unsupported claims) No answer is better than a wrong one.
+
+Relevant excerpts from the papers (not a verified explanation):
+
+[2507.07955v2:C:p034:c048] (page 34, Dynamic Chunking for End-to-End Hierarchical Sequence Modeling)
+> modeling. Word-based self-attention fusion (WSF) (Sreedhar et al. 2023) proposes a similar pooling st",,refused_correctly,Human verified: Correctly refused unanswerable near-miss question.
+Q22,eval_C_fc6915ab,C,What are the dimensions and channel counts of the convolutional layers in the RoBERTa baseline in Attention Is All You Need?,"I cannot find sufficient evidence in the three research papers to answer this question reliably. (Citation validation failed: Answer contains no citations — unsafe to send unsupported claims) No answer is better than a wrong one.
+
+Relevant excerpts from the papers (not a verified explanation):
+
+[2410.00037v1:C:p063:c062] (page 63, Moshi: a speech-text foundation model for real-time dialogue)
+> Moshi: a speech-text foundation model for real-time dialogue USER: Hello, I wanted to talk to you about",,refused_correctly,Human verified: Correctly refused unanswerable near-miss question.
+Q23,eval_C_fc6915ab,C,What is the maximum token context length of the GPT-4 model evaluated in the Moshi evaluation tables?,"I cannot find sufficient evidence in the three research papers to answer this question reliably. (No answer generated) No answer is better than a wrong one.
+
+Relevant excerpts from the papers (not a verified explanation):
+
+[2507.07955v2:C:p012:c016] (page 12, Dynamic Chunking for End-to-End Hierarchical Sequence Modeling)
+> scheduling with 10% linear warmup and 20% inverse-square-root decay (Ibrahim et al. 2024). Following Hägele et al. (2024) which recommends WSD schedulers with half the maximu",,refused_correctly,Human verified: Correctly refused unanswerable near-miss question.
+Q24,eval_C_fc6915ab,C,What is the exact batch size used when training the MambaByte model in Section 2 of Dynamic Chunking?,"I cannot find sufficient evidence in the three research papers to answer this question reliably. (Citation validation failed: Answer contains no citations — unsafe to send unsupported claims) No answer is better than a wrong one.
+
+Relevant excerpts from the papers (not a verified explanation):
+
+[2507.07955v2:C:p021:c027] (page 21, Dynamic Chunking for End-to-End Hierarchical Sequence Modeling)
+> Table 6: Related architectures. Comparison of related architectures, particularly those focused on by",,refused_correctly,Human verified: Correctly refused unanswerable near-miss question.
